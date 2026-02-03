@@ -1,0 +1,516 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product Details | JYOTISHVA - Premium Vedic Astrology</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        royal: "#1A0B2E",
+                        "royal-light": "#2D0B5A",
+                        gold: "#C5A059",
+                        "gold-bright": "#F4D03F",
+                        saffron: "#FF9933",
+                        cream: "#FDF5E6",
+                        "pearl": "#F9F7F2",
+                        "deep-red": "#7B1113",
+                    },
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        sans: ["Outfit", "sans-serif"],
+                    },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "2px",
+                        DEFAULT: "4px",
+                        md: "8px",
+                        lg: "12px",
+                        xl: "20px",
+                    },
+                    animation: {
+                        "spin-slow": "spin 30s linear infinite",
+                        "float": "float 6s ease-in-out infinite",
+                        "glow": "glow 2s ease-in-out infinite",
+                    },
+                    keyframes: {
+                        float: {
+                            "0%, 100%": { transform: "translateY(0px)" },
+                            "50%": { transform: "translateY(-15px)" },
+                        },
+                        glow: {
+                            "0%, 100%": { opacity: 1, filter: "drop-shadow(0 0 5px #C5A059)" },
+                            "50%": { opacity: 0.8, filter: "drop-shadow(0 0 15px #F4D03F)" },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .glass-light {
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .text-gradient-gold {
+          background: linear-gradient(to right, #C5A059, #F4D03F, #C5A059);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .border-ornate {
+          position: relative;
+          border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .border-ornate::before, .border-ornate::after {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #C5A059;
+          z-index: 10;
+        }
+        .border-ornate::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+        .border-ornate::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+        
+        .temple-corner {
+          clip-path: polygon(
+            0% 10px, 10px 10px, 10px 0%, 
+            calc(100% - 10px) 0%, calc(100% - 10px) 10px, 100% 10px, 
+            100% calc(100% - 10px), calc(100% - 10px) calc(100% - 10px), calc(100% - 10px) 100%, 
+            10px 100%, 10px calc(100% - 10px), 0% calc(100% - 10px)
+          );
+        }
+
+        .mandala-bg {
+          background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z' fill='%23C5A059' fill-opacity='0.04'/%3E%3C/svg%3E");
+        }
+      }
+      
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+</head>
+
+<body class="bg-[#FDFBF7] text-royal font-sans selection:bg-gold selection:text-white overflow-x-hidden mandala-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-500 glass-light border-b border-gold/10">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="v3.html" class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-gold/5 rounded-none border border-gold/40 flex items-center justify-center rotate-45 group hover:rotate-90 transition-transform duration-700">
+                        <span
+                            class="material-symbols-outlined text-gold -rotate-45 group-hover:rotate-[-90deg] transition-transform duration-700 text-lg">brightness_7</span>
+                    </div>
+                    <span class="font-display text-2xl font-bold tracking-widest text-gradient-gold">JYOTISHVA</span>
+                </a>
+            </div>
+
+            <div
+                class="hidden lg:flex items-center gap-8 font-display text-[10px] tracking-[0.2em] font-medium uppercase">
+                <a href="shop.html" class="hover:text-gold transition-colors relative group">
+                    Shop
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="v3.html" class="hover:text-gold transition-colors relative group">
+                    Home
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-gold transition-colors relative group">
+                    Navaratna
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-gold transition-colors relative group">
+                    Panchang
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button
+                    class="hidden sm:block font-display text-[10px] tracking-widest uppercase hover:text-gold transition-colors">Yajman
+                    Portal</button>
+                <button
+                    class="px-6 py-2 bg-gold text-white font-display font-bold text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-gold-bright hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] temple-corner">
+                    Get Kundli
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Detail -->
+    <main class="pt-32 pb-20">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Breadcrumbs -->
+            <nav class="flex mb-8 text-[10px] uppercase tracking-widest font-bold text-royal/40 reveal-on-scroll">
+                <a href="v3.html" class="hover:text-gold transition-colors">Home</a>
+                <span class="mx-3">/</span>
+                <a href="shop.html" class="hover:text-gold transition-colors">Shop</a>
+                <span class="mx-3">/</span>
+                <span class="text-gold">Sacred Murti</span>
+            </nav>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <!-- Product Image Gallery -->
+                <div class="space-y-6 reveal-on-scroll">
+                    <div class="aspect-square border-ornate overflow-hidden bg-white shadow-2xl temple-corner">
+                        <img src="murti.jpeg" class="w-full h-full object-cover" alt="Sacred Murti Main View">
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div
+                            class="aspect-square border border-gold/20 temple-corner overflow-hidden cursor-pointer hover:border-gold transition-colors">
+                            <img src="murti.jpeg"
+                                class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity"
+                                alt="View 1">
+                        </div>
+                        <div
+                            class="aspect-square border border-gold/20 temple-corner overflow-hidden cursor-pointer hover:border-gold transition-colors">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB60li0f6GJ516FM5br7mUbw50QLm_0g-aP48ieodkdMJf4OSK2NV2wAXgJWZx0lNB1SAViehJIS35KsmQd_UZ8XgUrlt9nbBGUH81jwOSoGdguhLo0jHy9KV-hTqD2toBCPFtBSk6JXPGLucPbWS24ZfwUZ_awWpNevbDKNlFesQvvr6T5M9CibPJaSoyTVammVsw-4iK958FAkPhaTDvuA9CoCQgYq-R8gDxnG0RAk9rokjp7PUDA0MFcCGiXVokBjn8kZPr8EpU"
+                                class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity"
+                                alt="View 2">
+                        </div>
+                        <div
+                            class="aspect-square border border-gold/20 temple-corner overflow-hidden cursor-pointer hover:border-gold transition-colors">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP3aRcV55JpEfWtlP45B2nmPUIka9ErS7tiSSvPUShn46jLKc_Fx0Xp4mn1361tlOg_HkYJR4OYzFT_GoGg_qx7JWhf6mT07vAUgwQgK7GH-mGa34_lPRCfIisPyazD2hRCYyuUVSVmda8FYeQHwyxxGsoUxMfvlkTFuTQDRLWxk3eItVxSkaKkr_S3zZCBYo_xaY0Uh4AJnfolKcCyAVr--S_rxyHxAXZI2hS76MtqAqOd286yzIzxy749UuTqaWY9VqaI_Lh1aU"
+                                class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity"
+                                alt="View 3">
+                        </div>
+                        <div
+                            class="aspect-square border border-gold/20 temple-corner overflow-hidden cursor-pointer hover:border-gold transition-colors">
+                            <img src="gemstone.jpg"
+                                class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity"
+                                alt="View 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="space-y-8 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 border border-gold/20 bg-gold/5 temple-corner mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                            <span class="text-[9px] uppercase tracking-[0.3em] font-medium text-gold font-bold">Limited
+                                Edition</span>
+                        </div>
+                        <h1 class="font-display text-4xl md:text-5xl text-royal mb-4 leading-tight">Sacred Panchdhatu
+                            Murti</h1>
+                        <div class="flex items-center gap-6">
+                            <span class="text-3xl font-display text-gold">₹12,500</span>
+                            <div class="flex items-center gap-1 border-l border-royal/10 pl-6">
+                                <div class="flex">
+                                    <span class="material-symbols-outlined text-gold text-sm">star</span>
+                                    <span class="material-symbols-outlined text-gold text-sm">star</span>
+                                    <span class="material-symbols-outlined text-gold text-sm">star</span>
+                                    <span class="material-symbols-outlined text-gold text-sm">star</span>
+                                    <span class="material-symbols-outlined text-gold text-sm">star</span>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-royal/40">48
+                                    Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-royal/60 text-lg leading-relaxed">
+                        Exquisitely hand-carved by master artisans in Swamimalai, this Panchdhatu (five-metal alloy)
+                        idol represents the pinnacle of Vedic sacred geometry. Each piece is energized through a 48-hour
+                        Pran Pratishtha ceremony.
+                    </p>
+
+                    <div class="space-y-4 pt-4 border-t border-royal/5">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-gold">verified_user</span>
+                            <span class="text-sm font-medium tracking-wide">Energized by Acharya Rajan personally</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-gold">local_shipping</span>
+                            <span class="text-sm font-medium tracking-wide">Sacred Packaging & Worldwide Delivery</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-gold">history_edu</span>
+                            <span class="text-sm font-medium tracking-wide">Certificate of Authenticity Included</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button
+                            class="flex-1 px-8 py-4 bg-gold text-white font-display font-bold tracking-widest text-[10px] uppercase hover:bg-gold-bright hover:shadow-[0_0_20px_rgba(197,160,89,0.3)] transition-all temple-corner">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 px-8 py-4 border-2 border-royal text-royal font-display font-bold tracking-widest text-[10px] uppercase hover:bg-royal hover:text-white transition-all temple-corner">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <div class="pt-8">
+                        <div class="p-6 bg-pearl border border-gold/10 temple-corner">
+                            <p class="font-display text-xs uppercase tracking-[0.2em] text-gold font-bold mb-4">The
+                                Guru's Word</p>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-none border border-gold/20 p-1 temple-corner bg-white shrink-0">
+                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuASR2j1Hxe3euSN6b6_Oi3F_3Waj1gZ-UTP_oG2JCOmsjsGQe6XscWU5rGq1YOApO6QIr7K0H-VOop-mFN923PNULTdrYGbgHIxNPii5Kmzd0pzuhXAF_gE11ia0mkCvAUTyhj27ZlXgYCOnIa1S-svLAZ0MZmuWl-giln-iRw2B34y43bsykT2h05K14qvCxprOvYqfcdHiNjuYhFjz7OhTnhTRTKOGYmWJC-MSgQXRdSHTAEZgpuM8vFfZFs9eu4I6bi95ftBsJY"
+                                        class="w-full h-full object-cover temple-corner" alt="Acharya Rajan">
+                                </div>
+                                <div>
+                                    <p class="text-xs italic text-royal/60 leading-relaxed">
+                                        "I have personally selected this Murti for its perfect adherence to Shilpa
+                                        Shastra. Placing this in your Northeast (Ishan) corner will invite profound
+                                        clarity and cosmic grace into your dwelling."
+                                    </p>
+                                    <p class="text-[9px] uppercase font-bold tracking-widest text-gold mt-2">— Acharya
+                                        Rajan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product Tabs/Specifications -->
+            <div class="mt-24 reveal-on-scroll">
+                <div
+                    class="border-b border-royal/10 mb-12 flex gap-12 text-[10px] uppercase tracking-[0.3em] font-bold">
+                    <button class="pb-4 border-b-2 border-gold text-gold">Details & Rituals</button>
+                    <button class="pb-4 text-royal/40 hover:text-gold transition-colors">Vedic Significance</button>
+                    <button class="pb-4 text-royal/40 hover:text-gold transition-colors">Care Instructions</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div class="space-y-6">
+                        <h3 class="font-display text-2xl text-royal">The Consecration Process</h3>
+                        <p class="text-royal/60 leading-relaxed">
+                            Unlike mass-produced items, our Murtis undergo a rigorous consecration process. This
+                            includes 'Shuddhikaran' (purification) using Ganges water and 'Prana Pratishtha' (infusion
+                            of life force) performed during auspicious Muhurtas aligned with the deity's planetary
+                            correspondence.
+                        </p>
+                        <h3 class="font-display text-2xl text-royal">Material Intelligence</h3>
+                        <p class="text-royal/60 leading-relaxed">
+                            The Panchdhatu represents the five elements (Prithvi, Agni, Jal, Vayu, and Akash). The
+                            specific ratio of Gold, Silver, Copper, Zinc, and Iron creates a resonant field that
+                            amplifies prayers and positive vibrations within the space.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="bg-white border border-gold/10 p-8 temple-corner">
+                            <h3
+                                class="font-display text-xl text-royal mb-6 text-center underline decoration-gold/30 underline-offset-8">
+                                Specifications</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between border-b border-royal/5 pb-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest font-bold text-royal/40">Height</span>
+                                    <span class="text-xs font-semibold">9.5 Inches</span>
+                                </div>
+                                <div class="flex justify-between border-b border-royal/5 pb-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest font-bold text-royal/40">Weight</span>
+                                    <span class="text-xs font-semibold">2.4 Kilograms</span>
+                                </div>
+                                <div class="flex justify-between border-b border-royal/5 pb-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest font-bold text-royal/40">Composition</span>
+                                    <span class="text-xs font-semibold">Panchdhatu (Five-Metal Alloy)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-royal/5 pb-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest font-bold text-royal/40">Artform</span>
+                                    <span class="text-xs font-semibold">Hollow Cast Lost-Wax Technique</span>
+                                </div>
+                                <div class="flex justify-between border-b border-royal/5 pb-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest font-bold text-royal/40">Origin</span>
+                                    <span class="text-xs font-semibold">Swamimalai, Tamil Nadu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-32 reveal-on-scroll">
+                <div class="text-center mb-16">
+                    <p class="text-gold uppercase tracking-[0.5em] text-[10px] font-bold mb-3">Complete the Ritual</p>
+                    <h2 class="font-display text-3xl md:text-4xl text-gradient-gold">Recommended Additions</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Related 1 -->
+                    <div class="group">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXOl_y-eYMtNPz_R8E4OdxWH2L7qhqGcBnd-zP5BtonhMrrnZ9hKBpoSdF3k-jrCptL0TgMB0KVVSxng28bAKlm1Jk9lgcK5sbq-fjagvu6szhQLRXVgiwxXWNTg90x8MN9Au950frXvKUngNk2EQ41X34jFU8r2W16n_VkFaBFFbcHEP6LPVlF1Tb_dPhD83LKJ6dZwCPtxSMGuWeRUXuLPoDdVNtM2r1ZuO8iJcEc9caM1EqKyhbI_a2CsCseZ3_Tq0hq3D7v64"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Vedic Aroma">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-display text-lg text-royal">Vedic Aroma</h3>
+                            <span class="text-gold font-bold">₹2,400</span>
+                        </div>
+                        <p class="text-royal/40 text-[10px] uppercase tracking-widest font-bold">Acharya Rajan</p>
+                    </div>
+
+                    <!-- Related 2 -->
+                    <div class="group">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4xGwYDPiaSQJxjfi2Zs8qtQku4uZxVWmID4D62nhMSePy7C1H4PV8qS_otA0aP1y-zqL2V2VAOxLge_y-S2rqAWD1u4S0AusfPb33M_MySXEczCPqmjSTd1jIN_3xG0oA0bFP6GV2Z_qA-Un5EJ_MtJDaRZon8zrXgXCy0Pa5WVMoKPaedeWn3-l-sBL_dd4JczQwQRBGa8Uek_vJYbsauGfQiilXToXExtQvtqAkbLvPBM0zjU3SjGubyhUBy78WkwgFNLCj5zw"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Siddha Mala">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-display text-lg text-royal">Siddha Mala</h3>
+                            <span class="text-gold font-bold">₹8,900</span>
+                        </div>
+                        <p class="text-royal/40 text-[10px] uppercase tracking-widest font-bold">Acharya Rajan</p>
+                    </div>
+
+                    <!-- Related 3 -->
+                    <div class="group">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="german-stone.webp"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Zambian Emerald">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-display text-lg text-royal">Zambian Emerald</h3>
+                            <span class="text-gold font-bold">₹38,500</span>
+                        </div>
+                        <p class="text-royal/40 text-[10px] uppercase tracking-widest font-bold">Pandita Meera</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gold/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 items-start">
+                <div class="col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-gold flex items-center justify-center rotate-45 bg-gold/5">
+                            <span class="material-symbols-outlined text-gold -rotate-45 text-lg">brightness_7</span>
+                        </div>
+                        <span
+                            class="font-display text-2xl font-bold tracking-widest text-gradient-gold">JYOTISHVA</span>
+                    </div>
+                    <p class="text-base text-royal/40 max-w-sm leading-relaxed">
+                        Upholding the sanctity of Vedic Sciences. We provide authentic, evidence-based Jyotish
+                        consultations for global seekers.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <h4 class="font-display text-xs uppercase tracking-[0.4em] text-gold font-bold">Divine Offerings
+                    </h4>
+                    <ul class="space-y-6 text-royal/60 text-sm font-medium uppercase tracking-widest mt-10">
+                        <li><a href="shop.html" class="hover:text-gold transition-colors">Shop All</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Gemstones</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Puja Items</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Reports</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-8">
+                    <h4 class="font-display text-xs uppercase tracking-[0.4em] text-gold font-bold">The Ashram</h4>
+                    <ul class="space-y-6 text-royal/60 text-sm font-medium uppercase tracking-widest mt-10">
+                        <li><a href="v3.html" class="hover:text-gold transition-colors">Our Lineage</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Vedic Repository</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Contact Guru</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Ethics Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-royal/30">
+                <p>© 2026 JYOTISHVA COSMIC SERVICES. PRESERVING DHARMA THROUGH SCIENCE.</p>
+                <div class="flex gap-10">
+                    <a href="#" class="hover:text-gold transition-colors">Sitemap</a>
+                    <a href="#" class="hover:text-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-gold transition-colors">Certification</a>
+                </div>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-royal/30 mt-6">@ Copyright 2026 ANRBAN
+                KUNDU. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('py-2');
+                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+            }
+        });
+    </script>
+</body>
+
+</html>

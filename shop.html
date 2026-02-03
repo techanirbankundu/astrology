@@ -1,0 +1,602 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shop | JYOTISHVA - Premium Vedic Astrology & Navaratna</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        royal: "#1A0B2E",
+                        "royal-light": "#2D0B5A",
+                        gold: "#C5A059",
+                        "gold-bright": "#F4D03F",
+                        saffron: "#FF9933",
+                        cream: "#FDF5E6",
+                        "pearl": "#F9F7F2",
+                        "deep-red": "#7B1113",
+                    },
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        sans: ["Outfit", "sans-serif"],
+                    },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "2px",
+                        DEFAULT: "4px",
+                        md: "8px",
+                        lg: "12px",
+                        xl: "20px",
+                    },
+                    animation: {
+                        "spin-slow": "spin 30s linear infinite",
+                        "float": "float 6s ease-in-out infinite",
+                        "glow": "glow 2s ease-in-out infinite",
+                    },
+                    keyframes: {
+                        float: {
+                            "0%, 100%": { transform: "translateY(0px)" },
+                            "50%": { transform: "translateY(-15px)" },
+                        },
+                        glow: {
+                            "0%, 100%": { opacity: 1, filter: "drop-shadow(0 0 5px #C5A059)" },
+                            "50%": { opacity: 0.8, filter: "drop-shadow(0 0 15px #F4D03F)" },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .glass-light {
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .text-gradient-gold {
+          background: linear-gradient(to right, #C5A059, #F4D03F, #C5A059);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .border-ornate {
+          position: relative;
+          border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .border-ornate::before, .border-ornate::after {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #C5A059;
+          z-index: 10;
+        }
+        .border-ornate::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+        .border-ornate::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+        
+        .temple-corner {
+          clip-path: polygon(
+            0% 10px, 10px 10px, 10px 0%, 
+            calc(100% - 10px) 0%, calc(100% - 10px) 10px, 100% 10px, 
+            100% calc(100% - 10px), calc(100% - 10px) calc(100% - 10px), calc(100% - 10px) 100%, 
+            10px 100%, 10px calc(100% - 10px), 0% calc(100% - 10px)
+          );
+        }
+
+        .mandala-bg {
+          background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z' fill='%23C5A059' fill-opacity='0.04'/%3E%3C/svg%3E");
+        }
+      }
+      
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .product-card:hover .product-info {
+        transform: translateY(-10px);
+      }
+    </style>
+</head>
+
+<body class="bg-[#FDFBF7] text-royal font-sans selection:bg-gold selection:text-white overflow-x-hidden mandala-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-500 glass-light border-b border-gold/10">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="v3.html" class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-gold/5 rounded-none border border-gold/40 flex items-center justify-center rotate-45 group hover:rotate-90 transition-transform duration-700">
+                        <span
+                            class="material-symbols-outlined text-gold -rotate-45 group-hover:rotate-[-90deg] transition-transform duration-700 text-lg">brightness_7</span>
+                    </div>
+                    <span class="font-display text-2xl font-bold tracking-widest text-gradient-gold">JYOTISHVA</span>
+                </a>
+            </div>
+
+            <div
+                class="hidden lg:flex items-center gap-8 font-display text-[10px] tracking-[0.2em] font-medium uppercase">
+                <a href="shop.html" class="text-gold transition-colors relative group">
+                    Shop
+                    <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-gold"></span>
+                </a>
+                <a href="v3.html" class="hover:text-gold transition-colors relative group">
+                    Home
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-gold transition-colors relative group">
+                    Navaratna
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-gold transition-colors relative group">
+                    Panchang
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button
+                    class="hidden sm:block font-display text-[10px] tracking-widest uppercase hover:text-gold transition-colors">Yajman
+                    Portal</button>
+                <button
+                    class="px-6 py-2 bg-gold text-white font-display font-bold text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-gold-bright hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] temple-corner">
+                    Get Kundli
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-16 bg-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <p class="text-gold uppercase tracking-[0.5em] text-[10px] font-bold mb-4 reveal-on-scroll">Divine Boutique
+            </p>
+            <h1 class="font-display text-5xl md:text-6xl text-gradient-gold mb-6 reveal-on-scroll">Sacred Collection
+            </h1>
+            <p class="text-royal/60 max-w-2xl mx-auto text-lg leading-relaxed reveal-on-scroll">
+                Curated by our renowned Acharyas, each item is energized and selected to enhance your spiritual journey
+                and cosmic alignment.
+            </p>
+        </div>
+        <!-- Decorative Mandala -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] animate-spin-slow pointer-events-none">
+            <svg viewBox="0 0 100 100" class="w-full h-full fill-gold">
+                <path d="M50 0 L55 35 L90 25 L65 50 L90 75 L55 65 L50 100 L45 65 L10 75 L35 50 L10 25 L45 35 Z" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- Shop by Astrologer Section -->
+    <main class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Acharya Rajan's Collection -->
+            <div class="mb-32">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-16 reveal-on-scroll">
+                    <div class="w-24 h-24 rounded-none border border-gold/20 p-1 temple-corner bg-white shrink-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuASR2j1Hxe3euSN6b6_Oi3F_3Waj1gZ-UTP_oG2JCOmsjsGQe6XscWU5rGq1YOApO6QIr7K0H-VOop-mFN923PNULTdrYGbgHIxNPii5Kmzd0pzuhXAF_gE11ia0mkCvAUTyhj27ZlXgYCOnIa1S-svLAZ0MZmuWl-giln-iRw2B34y43bsykT2h05K14qvCxprOvYqfcdHiNjuYhFjz7OhTnhTRTKOGYmWJC-MSgQXRdSHTAEZgpuM8vFfZFs9eu4I6bi95ftBsJY"
+                            class="w-full h-full object-cover temple-corner" alt="Acharya Rajan">
+                    </div>
+                    <div>
+                        <h2 class="font-display text-3xl text-royal mb-2">Acharya Rajan's Wisdom Tools</h2>
+                        <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Puja Essentials & Sacred
+                            Objects</p>
+                    </div>
+                    <div class="md:ml-auto">
+                        <a href="#"
+                            class="text-[10px] uppercase font-bold tracking-widest text-gold border-b border-gold/20 pb-1 hover:border-gold transition-colors">View
+                            All Tools</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 100ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="murti.jpeg"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Sacred Murti">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Sacred Murti</h3>
+                                <span class="text-gold font-bold">₹12,500</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Hand-carved premium bronze deities for your home
+                                Shanti-peeth.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4xGwYDPiaSQJxjfi2Zs8qtQku4uZxVWmID4D62nhMSePy7C1H4PV8qS_otA0aP1y-zqL2V2VAOxLge_y-S2rqAWD1u4S0AusfPb33M_MySXEczCPqmjSTd1jIN_3xG0oA0bFP6GV2Z_qA-Un5EJ_MtJDaRZon8zrXgXCy0Pa5WVMoKPaedeWn3-l-sBL_dd4JczQwQRBGa8Uek_vJYbsauGfQiilXToXExtQvtqAkbLvPBM0zjU3SjGubyhUBy78WkwgFNLCj5zw"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Siddha Mala">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Siddha Mala</h3>
+                                <span class="text-gold font-bold">₹8,900</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Authentic 108-bead Rudraksha mala energized in
+                                Varanasi temples.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXOl_y-eYMtNPz_R8E4OdxWH2L7qhqGcBnd-zP5BtonhMrrnZ9hKBpoSdF3k-jrCptL0TgMB0KVVSxng28bAKlm1Jk9lgcK5sbq-fjagvu6szhQLRXVgiwxXWNTg90x8MN9Au950frXvKUngNk2EQ41X34jFU8r2W16n_VkFaBFFbcHEP6LPVlF1Tb_dPhD83LKJ6dZwCPtxSMGuWeRUXuLPoDdVNtM2r1ZuO8iJcEc9caM1EqKyhbI_a2CsCseZ3_Tq0hq3D7v64"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Vedic Aroma">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Vedic Aroma</h3>
+                                <span class="text-gold font-bold">₹2,400</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Sandalwood and Guggulu incense blend for deeper
+                                meditation focus.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pandita Meera's Collection -->
+            <div class="mb-32">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-16 reveal-on-scroll">
+                    <div class="w-24 h-24 rounded-none border border-gold/20 p-1 temple-corner bg-white shrink-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP3aRcV55JpEfWtlP45B2nmPUIka9ErS7tiSSvPUShn46jLKc_Fx0Xp4mn1361tlOg_HkYJR4OYzFT_GoGg_qx7JWhf6mT07vAUgwQgK7GH-mGa34_lPRCfIisPyazD2hRCYyuUVSVmda8FYeQHwyxxGsoUxMfvlkTFuTQDRLWxk3eItVxSkaKkr_S3zZCBYo_xaY0Uh4AJnfolKcCyAVr--S_rxyHxAXZI2hS76MtqAqOd286yzIzxy749UuTqaWY9VqaI_Lh1aU"
+                            class="w-full h-full object-cover temple-corner" alt="Pandita Meera">
+                    </div>
+                    <div>
+                        <h2 class="font-display text-3xl text-royal mb-2">Pandita Meera's Gemstone Sanctuary</h2>
+                        <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Sacred Navaratna &
+                            Ratna-Shastra</p>
+                    </div>
+                    <div class="md:ml-auto">
+                        <a href="#"
+                            class="text-[10px] uppercase font-bold tracking-widest text-gold border-b border-gold/20 pb-1 hover:border-gold transition-colors">View
+                            All Gems</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Product 4 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 100ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="gemstone.jpg"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Natural Ruby">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Natural Ruby</h3>
+                                <span class="text-gold font-bold">₹45,000</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">5.2ct Certified Pigeon Blood Ruby for Sun (Surya)
+                                alignment.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="german-stone.webp"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Zambian Emerald">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Zambian Emerald</h3>
+                                <span class="text-gold font-bold">₹38,500</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Authentic Panna for Mercury (Budha) - enhances
+                                intellect & focus.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXOl_y-eYMtNPz_R8E4OdxWH2L7qhqGcBnd-zP5BtonhMrrnZ9hKBpoSdF3k-jrCptL0TgMB0KVVSxng28bAKlm1Jk9lgcK5sbq-fjagvu6szhQLRXVgiwxXWNTg90x8MN9Au950frXvKUngNk2EQ41X34jFU8r2W16n_VkFaBFFbcHEP6LPVlF1Tb_dPhD83LKJ6dZwCPtxSMGuWeRUXuLPoDdVNtM2r1ZuO8iJcEc9caM1EqKyhbI_a2CsCseZ3_Tq0hq3D7v64"
+                                class="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Blue Sapphire">
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Blue Sapphire</h3>
+                                <span class="text-gold font-bold">₹75,000</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Indraneel Neelam for Saturn (Shani) protection and
+                                karmic balance.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dr. S. Nair's Collection -->
+            <div class="mb-20">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-16 reveal-on-scroll">
+                    <div class="w-24 h-24 rounded-none border border-gold/20 p-1 temple-corner bg-white shrink-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjkBTCmXNi8AgrAyx4Z_0eVNM8oRPvk95QjsK2Pf4bgK9AE1rk4uWkT6B6SbTpW3NkO2sbE67GXIAo6qo2z8aJP1ujJY4XtAxiaBPG2_TPNRWM4njjkYrdUWtwImATdwnproz8WDqW5ej_kBldPNctgUp9d4_FoZRjZKjONMzoO5uwb6_MSS4WbkJziIRcMJdzmUk2-dPjTk9_UoaxwJplWnhhElFs7jnHf55gUDV4DhKycQ58-oDDqH0XHAgIkGIAxj8lrAk9DxE"
+                            class="w-full h-full object-cover temple-corner" alt="Dr. S. Nair">
+                    </div>
+                    <div>
+                        <h2 class="font-display text-3xl text-royal mb-2">Dr. S. Nair's Sidhanta Services</h2>
+                        <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Comprehensive Reports &
+                            Consultations</p>
+                    </div>
+                    <div class="md:ml-auto">
+                        <a href="#"
+                            class="text-[10px] uppercase font-bold tracking-widest text-gold border-b border-gold/20 pb-1 hover:border-gold transition-colors">View
+                            All Services</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 100ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB60li0f6GJ516FM5br7mUbw50QLm_0g-aP48ieodkdMJf4OSK2NV2wAXgJWZx0lNB1SAViehJIS35KsmQd_UZ8XgUrlt9nbBGUH81jwOSoGdguhLo0jHy9KV-hTqD2toBCPFtBSk6JXPGLucPbWS24ZfwUZ_awWpNevbDKNlFesQvvr6T5M9CibPJaSoyTVammVsw-4iK958FAkPhaTDvuA9CoCQgYq-R8gDxnG0RAk9rokjp7PUDA0MFcCGiXVokBjn8kZPr8EpU"
+                                class="w-full h-full object-cover opacity-10 transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Full Life Report">
+                            <div class="absolute inset-0 flex items-center justify-center p-8">
+                                <span
+                                    class="font-display text-4xl text-gold/30 text-center uppercase tracking-widest">Janam
+                                    Kundli</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Ultimate Life Report</h3>
+                                <span class="text-gold font-bold">₹15,000</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">100+ pages of detailed analysis covering all 12 houses
+                                and D-charts.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Book
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB60li0f6GJ516FM5br7mUbw50QLm_0g-aP48ieodkdMJf4OSK2NV2wAXgJWZx0lNB1SAViehJIS35KsmQd_UZ8XgUrlt9nbBGUH81jwOSoGdguhLo0jHy9KV-hTqD2toBCPFtBSk6JXPGLucPbWS24ZfwUZ_awWpNevbDKNlFesQvvr6T5M9CibPJaSoyTVammVsw-4iK958FAkPhaTDvuA9CoCQgYq-R8gDxnG0RAk9rokjp7PUDA0MFcCGiXVokBjn8kZPr8EpU"
+                                class="w-full h-full object-cover opacity-10 transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Varshphal">
+                            <div class="absolute inset-0 flex items-center justify-center p-8">
+                                <span
+                                    class="font-display text-4xl text-gold/30 text-center uppercase tracking-widest">Varshphal
+                                    2026</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Annual Forecast 2026</h3>
+                                <span class="text-gold font-bold">₹5,000</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Complete month-by-month cosmic roadmap for the
+                                upcoming year.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Book
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group product-card reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div
+                            class="aspect-square border border-gold/10 bg-white overflow-hidden mb-6 shadow-lg temple-corner relative">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB60li0f6GJ516FM5br7mUbw50QLm_0g-aP48ieodkdMJf4OSK2NV2wAXgJWZx0lNB1SAViehJIS35KsmQd_UZ8XgUrlt9nbBGUH81jwOSoGdguhLo0jHy9KV-hTqD2toBCPFtBSk6JXPGLucPbWS24ZfwUZ_awWpNevbDKNlFesQvvr6T5M9CibPJaSoyTVammVsw-4iK958FAkPhaTDvuA9CoCQgYq-R8gDxnG0RAk9rokjp7PUDA0MFcCGiXVokBjn8kZPr8EpU"
+                                class="w-full h-full object-cover opacity-10 transition-all duration-[1.5s] group-hover:scale-110"
+                                alt="Marriage Compatibility">
+                            <div class="absolute inset-0 flex items-center justify-center p-8">
+                                <span
+                                    class="font-display text-4xl text-gold/30 text-center uppercase tracking-widest">Ashtakoot
+                                    Milan</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="details.html"
+                                    class="px-8 py-3 bg-royal text-white font-display font-bold text-[10px] tracking-widest uppercase temple-corner">View
+                                    Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info transition-transform duration-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-display text-xl text-royal">Marriage Compatibility</h3>
+                                <span class="text-gold font-bold">₹7,500</span>
+                            </div>
+                            <p class="text-royal/40 text-sm mb-4">Siddhanta-based gun-milan and relational longevity
+                                analysis.</p>
+                            <button
+                                class="w-full py-3 bg-transparent border border-gold/20 text-gold font-display font-bold text-[10px] tracking-widest uppercase hover:bg-gold hover:text-white transition-all temple-corner">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gold/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 items-start">
+                <div class="col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-gold flex items-center justify-center rotate-45 bg-gold/5">
+                            <span class="material-symbols-outlined text-gold -rotate-45 text-lg">brightness_7</span>
+                        </div>
+                        <span
+                            class="font-display text-2xl font-bold tracking-widest text-gradient-gold">JYOTISHVA</span>
+                    </div>
+                    <p class="text-base text-royal/40 max-w-sm leading-relaxed">
+                        Upholding the sanctity of Vedic Sciences. We provide authentic, evidence-based Jyotish
+                        consultations for global seekers.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <h4 class="font-display text-xs uppercase tracking-[0.4em] text-gold font-bold">Divine Offerings
+                    </h4>
+                    <ul class="space-y-6 text-royal/60 text-sm font-medium uppercase tracking-widest mt-10">
+                        <li><a href="shop.html" class="hover:text-gold transition-colors">Shop All</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Gemstones</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Puja Items</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Reports</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-8">
+                    <h4 class="font-display text-xs uppercase tracking-[0.4em] text-gold font-bold">The Ashram</h4>
+                    <ul class="space-y-6 text-royal/60 text-sm font-medium uppercase tracking-widest mt-10">
+                        <li><a href="v3.html" class="hover:text-gold transition-colors">Our Lineage</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Vedic Repository</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Contact Guru</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Ethics Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-royal/30">
+                <p>© 2026 JYOTISHVA COSMIC SERVICES. PRESERVING DHARMA THROUGH SCIENCE.</p>
+                <div class="flex gap-10">
+                    <a href="#" class="hover:text-gold transition-colors">Sitemap</a>
+                    <a href="#" class="hover:text-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-gold transition-colors">Certification</a>
+                </div>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-royal/30 mt-6">@ Copyright 2026 ANRBAN
+                KUNDU. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('py-2');
+                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+            }
+        });
+    </script>
+</body>
+
+</html>
